@@ -19,27 +19,33 @@
  * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * 
  */
-package org.riversun.bing.client.image_search.model;
+package org.riversun.bing.client.v5.image_search.model;
+
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
- * Error
+ * 
+ * BingImageSearchResponse
  * 
  * @author Tom Misawa (riversun.org@gmail.com)
  *
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Error {
-	public Error() {
+public class BingImageSearchResponse {
+
+	public BingImageSearchResponse() {
 	}
 
-	public String code;
-	public String message;
-	public String parameter;
+	public List<Image> value;
+	public String _type;
+	public Instrumentation instrumentation;
+	public List<Error> errors;
 
 	@Override
 	public String toString() {
-		return "Error [code=" + code + ", message=" + message + ", parameter=" + parameter + "]";
+		return "BingImageSearchResponse [value=" + value + ", _type=" + _type + ", instrumentation=" + instrumentation + ", errors=" + errors + "]";
 	}
+
 }

@@ -19,42 +19,27 @@
  * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * 
  */
-package org.riversun.bing.client.image_search;
+package org.riversun.bing.client.v5.image_search.model;
 
-import java.io.IOException;
-
-import org.riversun.bing.client.image_search.model.BingImageSearchResponse;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
- * Exception of Search result
+ * Thumbnail
  * 
  * @author Tom Misawa (riversun.org@gmail.com)
+ *
  */
-@SuppressWarnings("serial")
-public class BingImageSearchException extends Exception {
-
-	public BingImageSearchException(String detailMessage, Throwable throwable) {
-		super(detailMessage, throwable);
-
-		ObjectMapper mapper = new ObjectMapper();
-		try {
-			mBingImageResponse = mapper.readValue(detailMessage, BingImageSearchResponse.class);
-		} catch (IOException e) {
-
-		}
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Thumbnail {
+	public Thumbnail() {
 	}
 
-	public BingImageSearchException(Throwable throwable) {
-		super(throwable);
+	public int width;
+	public int height;
 
-	}
-
-	private BingImageSearchResponse mBingImageResponse;
-
-	public BingImageSearchResponse getBingResponse() {
-		return mBingImageResponse;
+	@Override
+	public String toString() {
+		return "Thumbnail [width=" + width + ", height=" + height + "]";
 	}
 
 }

@@ -19,15 +19,15 @@
  * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * 
  */
-package org.riversun.bing.client.image_search;
+package org.riversun.bing.client.v5.image_search;
 
 import java.io.IOException;
 import java.util.logging.Logger;
 
-import org.riversun.bing.client.image_search.http.LiteHttpClient;
-import org.riversun.bing.client.image_search.http.LiteHttpClientException;
-import org.riversun.bing.client.image_search.model.BingImageSearchRequest;
-import org.riversun.bing.client.image_search.model.BingImageSearchResponse;
+import org.riversun.bing.client.v5.image_search.http.LiteHttpClient;
+import org.riversun.bing.client.v5.image_search.http.LiteHttpClientException;
+import org.riversun.bing.client.v5.image_search.model.BingImageSearchRequest;
+import org.riversun.bing.client.v5.image_search.model.BingImageSearchResponse;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;

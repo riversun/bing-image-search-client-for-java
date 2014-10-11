@@ -19,27 +19,26 @@
  * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * 
  */
-package org.riversun.bing.client.image_search.model;
+package org.riversun.bing.client.v5.image_search.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
- * Thumbnail
+ * Instrumentation
  * 
  * @author Tom Misawa (riversun.org@gmail.com)
  *
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Thumbnail {
-	public Thumbnail() {
+public class Instrumentation {
+	public Instrumentation() {
 	}
 
-	public int width;
-	public int height;
+	public String pageLoadPingUrl;
 
 	@Override
 	public String toString() {
-		return "Thumbnail [width=" + width + ", height=" + height + "]";
+		return "Instrumentation [pageLoadPingUrl=" + pageLoadPingUrl + "]";
 	}
 
 }

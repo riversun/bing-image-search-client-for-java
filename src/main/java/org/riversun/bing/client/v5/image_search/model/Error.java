@@ -19,25 +19,27 @@
  * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * 
  */
-package org.riversun.bing.client.image_search.http;
+package org.riversun.bing.client.v5.image_search.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
- * Lite Http Client Exception
+ * Error
  * 
  * @author Tom Misawa (riversun.org@gmail.com)
  *
  */
-@SuppressWarnings("serial")
-public class LiteHttpClientException extends Exception {
-
-	public LiteHttpClientException(String detailMessage, Throwable throwable) {
-		super(detailMessage, throwable);
-
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Error {
+	public Error() {
 	}
 
-	public LiteHttpClientException(Throwable throwable) {
-		super(throwable);
+	public String code;
+	public String message;
+	public String parameter;
 
+	@Override
+	public String toString() {
+		return "Error [code=" + code + ", message=" + message + ", parameter=" + parameter + "]";
 	}
-
 }

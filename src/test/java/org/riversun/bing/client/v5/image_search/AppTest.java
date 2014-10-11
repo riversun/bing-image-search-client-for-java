@@ -1,4 +1,4 @@
-package org.riversun.bing.client.image_search;
+package org.riversun.bing.client.v5.image_search;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

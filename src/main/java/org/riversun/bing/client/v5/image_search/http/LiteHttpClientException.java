@@ -19,33 +19,25 @@
  * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * 
  */
-package org.riversun.bing.client.image_search.model;
-
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+package org.riversun.bing.client.v5.image_search.http;
 
 /**
- * 
- * BingImageSearchResponse
+ * Lite Http Client Exception
  * 
  * @author Tom Misawa (riversun.org@gmail.com)
  *
  */
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class BingImageSearchResponse {
+@SuppressWarnings("serial")
+public class LiteHttpClientException extends Exception {
 
-	public BingImageSearchResponse() {
+	public LiteHttpClientException(String detailMessage, Throwable throwable) {
+		super(detailMessage, throwable);
+
 	}
 
-	public List<Image> value;
-	public String _type;
-	public Instrumentation instrumentation;
-	public List<Error> errors;
+	public LiteHttpClientException(Throwable throwable) {
+		super(throwable);
 
-	@Override
-	public String toString() {
-		return "BingImageSearchResponse [value=" + value + ", _type=" + _type + ", instrumentation=" + instrumentation + ", errors=" + errors + "]";
 	}
 
 }

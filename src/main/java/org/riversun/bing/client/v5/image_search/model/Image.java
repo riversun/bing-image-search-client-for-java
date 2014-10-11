@@ -19,26 +19,43 @@
  * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * 
  */
-package org.riversun.bing.client.image_search.model;
+package org.riversun.bing.client.v5.image_search.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
- * Instrumentation
+ * Image
  * 
  * @author Tom Misawa (riversun.org@gmail.com)
  *
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Instrumentation {
-	public Instrumentation() {
+public class Image {
+
+	public Image() {
 	}
 
-	public String pageLoadPingUrl;
+	public String name;
+	public String contentUrl;
+	public int width;
+	public int height;
+	public String contentSize;
+	public String thumbnailUrl;
+	public Thumbnail thumbnail;
+	public String encodingFormat;
+	public String webSearchUrl;
+	public String datePublished;
+	public String hostPageUrl;
+	public String hostPageDisplayUrl;
+	public String imageInsightsToken;
+	public String imageId;
+	public String accentColor;
 
 	@Override
 	public String toString() {
-		return "Instrumentation [pageLoadPingUrl=" + pageLoadPingUrl + "]";
+		return "Image [name=" + name + ", contentUrl=" + contentUrl + ", width=" + width + ", height=" + height + ", contentSize=" + contentSize + ", thumbnailUrl=" + thumbnailUrl + ", thumbnail="
+				+ thumbnail + ", encodingFormat=" + encodingFormat + ", webSearchUrl=" + webSearchUrl + ", datePublished=" + datePublished + ", hostPageUrl=" + hostPageUrl + ", hostPageDisplayUrl="
+				+ hostPageDisplayUrl + ", imageInsightsToken=" + imageInsightsToken + ", imageId=" + imageId + ", accentColor=" + accentColor + "]";
 	}
 
 }

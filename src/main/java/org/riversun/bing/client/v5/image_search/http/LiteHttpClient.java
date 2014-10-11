@@ -19,7 +19,7 @@
  * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * 
  */
-package org.riversun.bing.client.image_search.http;
+package org.riversun.bing.client.v5.image_search.http;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

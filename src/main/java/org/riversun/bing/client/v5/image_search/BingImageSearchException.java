@@ -19,43 +19,42 @@
  * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * 
  */
-package org.riversun.bing.client.image_search.model;
+package org.riversun.bing.client.v5.image_search;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.io.IOException;
+
+import org.riversun.bing.client.v5.image_search.model.BingImageSearchResponse;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * Image
+ * Exception of Search result
  * 
  * @author Tom Misawa (riversun.org@gmail.com)
- *
  */
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class Image {
+@SuppressWarnings("serial")
+public class BingImageSearchException extends Exception {
 
-	public Image() {
+	public BingImageSearchException(String detailMessage, Throwable throwable) {
+		super(detailMessage, throwable);
+
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			mBingImageResponse = mapper.readValue(detailMessage, BingImageSearchResponse.class);
+		} catch (IOException e) {
+
+		}
 	}
 
-	public String name;
-	public String contentUrl;
-	public int width;
-	public int height;
-	public String contentSize;
-	public String thumbnailUrl;
-	public Thumbnail thumbnail;
-	public String encodingFormat;
-	public String webSearchUrl;
-	public String datePublished;
-	public String hostPageUrl;
-	public String hostPageDisplayUrl;
-	public String imageInsightsToken;
-	public String imageId;
-	public String accentColor;
+	public BingImageSearchException(Throwable throwable) {
+		super(throwable);
 
-	@Override
-	public String toString() {
-		return "Image [name=" + name + ", contentUrl=" + contentUrl + ", width=" + width + ", height=" + height + ", contentSize=" + contentSize + ", thumbnailUrl=" + thumbnailUrl + ", thumbnail="
-				+ thumbnail + ", encodingFormat=" + encodingFormat + ", webSearchUrl=" + webSearchUrl + ", datePublished=" + datePublished + ", hostPageUrl=" + hostPageUrl + ", hostPageDisplayUrl="
-				+ hostPageDisplayUrl + ", imageInsightsToken=" + imageInsightsToken + ", imageId=" + imageId + ", accentColor=" + accentColor + "]";
+	}
+
+	private BingImageSearchResponse mBingImageResponse;
+
+	public BingImageSearchResponse getBingResponse() {
+		return mBingImageResponse;
 	}
 
 }
