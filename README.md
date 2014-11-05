@@ -51,7 +51,7 @@ public class Example {
 
 ```
 
-## How to get your ACCESS_KEY
+## How to get your API_KEY
 
 - Step1. Access https://portal.azure.com
 - Step2. Click "+" mark on the left top.
