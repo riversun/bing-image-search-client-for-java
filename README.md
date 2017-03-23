@@ -1,6 +1,8 @@
 # Overview
 Bing Image Search API client for java
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.riversun/bing-image-search-client/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.riversun/bing-image-search-client)
+
 It is licensed under [MIT](https://opensource.org/licenses/MIT).
 
 ## Quick Start
