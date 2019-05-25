@@ -138,6 +138,7 @@
 					</execution>
 				</executions>
 				<configuration>
+					<doclint>none</doclint>
 					<author>true</author>
 					<source>1.7</source>
 					<show>protected</show>
